@@ -1,10 +1,11 @@
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { Formfield, Input, Label, Button } from './FormPhonebook.styled';
-import { addContact } from 'redux/contactsSlice';
-import { useDispatch } from 'react-redux';
+import { contactsOperations, contactsSelectors } from 'redux/contacts';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function FormPhonebook() {
+  const contacts = useSelector(contactsSelectors.selectContacts);
   const dispatch = useDispatch();
 
   const initialValues = {
@@ -35,9 +36,21 @@ export default function FormPhonebook() {
       .required(),
   });
 
-  const handleSubmit = (values, { resetForm }) => {
-    dispatch(addContact(values));
-    resetForm();
+  const handleSubmit = ({ name, number }, { resetForm }) => {
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase().trim()
+      )
+    ) {
+      alert(`${name} is already in contacts.`);
+      resetForm();
+    } else if (contacts.find(contact => contact.number === number)) {
+      alert(`${number} is already in contacts.`);
+      resetForm();
+    } else {
+      dispatch(contactsOperations.addContact({ name, number }));
+      resetForm();
+    }
   };
 
   return (

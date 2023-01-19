@@ -5,10 +5,9 @@ import {
   ContactsText,
   Button,
 } from './Contacts.styled';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { getContacts, getFilterValue } from 'redux/selectors';
-import { deleteContact } from 'redux/contactsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { getFilterValue } from 'redux/filter/filter.selectors';
+import { contactsOperations, contactsSelectors } from 'redux/contacts';
 
 const getFilterContacts = (contacts, filter) => {
   const normalizedFilter = filter.toLowerCase();
@@ -20,7 +19,7 @@ const getFilterContacts = (contacts, filter) => {
 
 function Contacts() {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(contactsSelectors.selectContacts);
   const filter = useSelector(getFilterValue);
 
   const filteredContacts = getFilterContacts(contacts, filter);
@@ -35,7 +34,7 @@ function Contacts() {
           <Button
             type="button"
             onClick={() => {
-              dispatch(deleteContact(id));
+              dispatch(contactsOperations.deleteContact(id));
             }}
           >
             <TiTimesOutline
