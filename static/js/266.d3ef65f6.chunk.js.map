@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/266.d3ef65f6.chunk.js","mappings":"2KAQA,UANa,kBACX,SAAC,IAAD,WACE,mDAFS,C","sources":["pages/Home.js"],"sourcesContent":["import Container from 'components/Container';\n\nconst Home = () => (\n  <Container>\n    <h1>Wellkome to phonebook</h1>\n  </Container>\n);\n\nexport default Home;\n"],"names":[],"sourceRoot":""}
