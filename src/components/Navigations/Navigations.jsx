@@ -1,14 +1,7 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from './Navigations.styled';
 import { useAuth } from 'hooks';
 
 const styles = {
-  link: {
-    display: 'inline-block',
-    textDecoration: 'none',
-    padding: 12,
-    fontWeight: 700,
-    color: '#2A363B',
-  },
   activeLink: {
     color: '#E84A5F',
   },
@@ -19,18 +12,14 @@ const Navigation = () => {
 
   return (
     <nav>
-      <NavLink to="/" style={styles.link} activestyle={styles.activeLink}>
+      <Link to="/" activestyle={styles.activeLink} end>
         Home
-      </NavLink>
+      </Link>
 
       {isLoggedIn && (
-        <NavLink
-          to="/contacts"
-          style={styles.link}
-          activestyle={styles.activeLink}
-        >
+        <Link to="/contacts" activestyle={styles.activeLink}>
           Contacts
-        </NavLink>
+        </Link>
       )}
     </nav>
   );

@@ -4,7 +4,7 @@ import {
   ContactsItem,
   ContactsText,
   Button,
-} from './Contacts.styled';
+} from './ContactsList.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFilterValue } from 'redux/filter/filter.selectors';
 import { contactsOperations, contactsSelectors } from 'redux/contacts';

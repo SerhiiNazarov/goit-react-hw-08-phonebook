@@ -1,9 +1,9 @@
 import Container from 'components/Container';
 
-const HomePage = () => (
+const Home = () => (
   <Container>
     <h1>Wellkome to phonebook</h1>
   </Container>
 );
 
-export default HomePage;
+export default Home;

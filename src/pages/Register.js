@@ -1,13 +1,10 @@
 import Registration from 'components/Registration';
 import Container from 'components/Container';
-import { Helmet } from 'react-helmet';
 
-export default function RegisterView() {
+export default function Register() {
   return (
     <Container>
-      <Helmet>
-        <title>Registration Page</title>
-      </Helmet>
+      <p>Registration Page</p>
       <Registration />
     </Container>
   );

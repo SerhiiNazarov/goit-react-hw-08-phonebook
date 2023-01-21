@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import authOperations from 'redux/auth/auth-operations';
 import { Formik, ErrorMessage } from 'formik';
-import { Formfield, Input, Label, Button } from './Login.styled';
+import { Formfield, Input, Label, Button } from './LoginForm.styled';
 
 export default function RegisterView() {
   const dispatch = useDispatch();
