@@ -21,7 +21,7 @@ export default function Contacts() {
       <FormPhonebook />
       <h2>Contacts</h2>
       {contacts.length > 1 && <Filter />}
-      {contacts ? (
+      {contacts.length > 0 ? (
         <ContactsList />
       ) : (
         <p style={{ color: 'red' }}>
