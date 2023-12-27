@@ -4,13 +4,14 @@ import { Formfield, Input, Label, Button } from './FormPhonebook.styled';
 import { contactsOperations, contactsSelectors } from 'redux/contacts';
 import { useDispatch, useSelector } from 'react-redux';
 
-export default function FormPhonebook() {
+export default function FormPhonebook({ closeModal }) {
   const contacts = useSelector(contactsSelectors.selectContacts);
   const dispatch = useDispatch();
 
   const initialValues = {
     name: '',
-    number: '',
+    phone: '',
+    email: '',
   };
 
   const patternName =
@@ -29,14 +30,15 @@ export default function FormPhonebook() {
         'Name may contain only latin letters, apostrophe, dash and spaces.'
       )
       .required(),
-    number: yup
+    phone: yup
       .string()
       .min(6, 'Phone number must be less than 6 characters')
       .matches(patternNumber, 'Phone number is not valid')
       .required(),
+    email: yup.string().min(6, 'Email must be less than 6 characters'),
   });
 
-  const handleSubmit = ({ name, number }, { resetForm }) => {
+  const handleSubmit = ({ name, phone, email }, { resetForm }) => {
     if (
       contacts.find(
         contact => contact.name.toLowerCase() === name.toLowerCase().trim()
@@ -44,12 +46,13 @@ export default function FormPhonebook() {
     ) {
       alert(`${name} is already in contacts.`);
       resetForm();
-    } else if (contacts.find(contact => contact.number === number)) {
-      alert(`${number} is already in contacts.`);
+    } else if (contacts.find(contact => contact.phone === phone)) {
+      alert(`${phone} is already in contacts.`);
       resetForm();
     } else {
-      dispatch(contactsOperations.addContact({ name, number }));
+      dispatch(contactsOperations.addContact({ name, phone, email }));
       resetForm();
+      closeModal();
     }
   };
 
@@ -70,10 +73,19 @@ export default function FormPhonebook() {
           />
         </Label>
         <Label>
-          Number
-          <Input type="tel" name="number" />
+          Phone
+          <Input type="tel" name="phone" />
           <ErrorMessage
-            name="number"
+            name="phone"
+            component="div"
+            style={{ color: '#d95d5d' }}
+          />
+        </Label>
+        <Label>
+          Email
+          <Input type="email" name="email" />
+          <ErrorMessage
+            name="email"
             component="div"
             style={{ color: '#d95d5d' }}
           />

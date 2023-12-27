@@ -11,7 +11,7 @@ export default function UserMenu() {
 
   return (
     <Container>
-      <Avatar src={avatar} alt="" width="32" />
+      <Avatar src={avatar} alt="avatar" width="32" />
       <Name>{name}</Name>
       <Button type="button" onClick={() => dispatch(authOperations.logOut())}>
         LogOut

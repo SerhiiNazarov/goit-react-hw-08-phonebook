@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
+axios.defaults.baseURL =
+  'https://nodejs-homework-rest-api-8qog.onrender.com/api';
 
 export const getContacts = async () => {
   const { data } = await axios.get('/contacts');

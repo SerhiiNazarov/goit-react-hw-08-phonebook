@@ -2,15 +2,16 @@ import styled from 'styled-components';
 
 export const ContactsList = styled.ul`
   margin-top: 30px;
+  padding: 10px;
   color: var(--secondaryTextColor);
   font-weight: 500;
   font-size: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 `;
 
 export const ContactsItem = styled.li`
-  display: flex;
-  justify-content: space-between;
-
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr 1fr;
   &:not(:last-child) {
     margin-bottom: 10px;
   }

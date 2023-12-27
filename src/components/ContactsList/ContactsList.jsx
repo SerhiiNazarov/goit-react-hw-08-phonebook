@@ -26,15 +26,15 @@ function Contacts() {
 
   return (
     <ContactsList>
-      {filteredContacts.map(({ id, name, number }) => (
-        <ContactsItem key={id}>
-          <ContactsText>
-            {name}: {number}
-          </ContactsText>
+      {filteredContacts.map(({ _id, name, phone, email }) => (
+        <ContactsItem key={_id}>
+          <ContactsText>{name}</ContactsText>
+          <ContactsText>{phone}</ContactsText>
+          <ContactsText>{email}</ContactsText>
           <Button
             type="button"
             onClick={() => {
-              dispatch(contactsOperations.deleteContact(id));
+              dispatch(contactsOperations.deleteContact(_id));
             }}
           >
             <TiTimesOutline

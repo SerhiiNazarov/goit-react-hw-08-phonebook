@@ -1,30 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const Avatar = styled.img`
-  margin-right: 5px;
-`;
-
-export const Name = styled.span`
-  font-weight: 700;
-  margin-right: 10px;
-  cursor: pointer;
-
-  &:hover {
-    color: var(--accentColor);
-  }
-`;
-
 export const Button = styled.button`
-  padding: 5px 10px;
-  margin-right: 10px;
+  padding: 10px 20px;
+  min-width: 300px;
   background-color: var(--accentColor);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  margin: 0 0 40px 0;
   border: none;
   outline: none;
   opacity: 0.8;
@@ -32,8 +14,8 @@ export const Button = styled.button`
 
   cursor: pointer;
   color: #fff;
-  font-weight: 500;
-  font-size: 10px;
+  font-weight: 700;
+  font-size: 16px;
   text-transform: uppercase;
 
   &:hover {

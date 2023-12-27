@@ -39,3 +39,16 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
+// import { configureStore } from '@reduxjs/toolkit';
+// import authReducer from './auth/auth-slice';
+// import { filterReducer } from './filter/filterSlice';
+// import { contactsReducer } from './contacts/contactsSlice';
+
+// export const store = configureStore({
+//   reducer: {
+//     auth: authReducer,
+//     contacts: contactsReducer,
+//     filter: filterReducer,
+//   },
+// });

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { contactsOperations, contactsSelectors } from 'redux/contacts';
 
 import Container from 'components/Container';
-import FormPhonebook from 'components/FormPhonebook';
+import { AddContact } from 'components/AddContact';
 import Filter from 'components/Filter';
 import ContactsList from 'components/ContactsList';
 
@@ -17,8 +17,7 @@ export default function Contacts() {
 
   return (
     <Container>
-      <h2>Add Contact</h2>
-      <FormPhonebook />
+      <AddContact />
       <h2>Contacts</h2>
       {contacts.length > 1 && <Filter />}
       {contacts.length > 0 ? (

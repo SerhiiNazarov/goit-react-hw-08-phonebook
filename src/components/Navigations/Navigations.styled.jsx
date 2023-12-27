@@ -11,4 +11,8 @@ export const Link = styled(NavLink)`
   &:hover {
     color: var(--accentColor);
   }
+
+  &.active {
+    border-bottom: 1px solid black;
+  }
 `;

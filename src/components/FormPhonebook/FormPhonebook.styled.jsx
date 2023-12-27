@@ -4,6 +4,7 @@ import { Form, Field } from 'formik';
 export const Formfield = styled(Form)`
   margin-top: 10px;
   margin-bottom: 30px;
+  text-align: center;
 `;
 
 export const Input = styled(Field)`
@@ -11,7 +12,7 @@ export const Input = styled(Field)`
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
-  width: 50%;
+  width: 250px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   cursor: pointer;
@@ -32,6 +33,7 @@ export const Input = styled(Field)`
 
 export const Button = styled.button`
   padding: 10px 20px;
+  margin-top: 15px;
   background-color: var(--accentColor);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
